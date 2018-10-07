@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from random import *
 
-TOKEN = 'NDk3NzU2ODY0OTQwMDgxMTgy.Dpj0rg.-es8C47XAOigeDE0tEDnDSaEUEM'
+TOKEN = 'token'
 
 client = discord.Client()
 description = '''ninjaBot in Python'''
