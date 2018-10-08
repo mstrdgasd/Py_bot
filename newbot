@@ -1,0 +1,59 @@
+import discord
+from discord.ext import commands
+from random import *
+
+TOKEN = 'NDk4ODMyNzcxMzAxNzY5MjI2.DpzrBQ.-Pb7JeOLs6uDFw8DPGu3f02AJKE'
+
+client = discord.Client()
+description = '''ninjaBot in Python'''
+bot = commands.Bot(command_prefix='?', description=description)
+
+
+@bot.event
+async def on_ready():
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('------')
+
+
+@bot.command()
+async def joza():
+    """Says world"""
+    await bot.say("Jebem ti mater pizda zafukana kam si mi alkota skrila baba??")
+
+
+@bot.command()
+async def zepek():
+    """Pove Resnico"""
+    await bot.say("```"
+                  "cokolada<vanilija"
+                  "```")
+
+
+@bot.command()
+async def add(left: float, right: float):
+    """Sešteje stevilki"""
+    await bot.say(left + right)
+
+
+@bot.command()
+async def sub(left: float, right : float):
+    """Odšteje črke"""
+    await bot.say(left - right)
+
+
+@bot.command()
+async def txt(wrd: str):
+    """Texts the word"""
+    await bot.say(wrd)
+
+
+@bot.command()
+async def rnum():
+    """Pokaze % trenutnega alkota v krvi"""
+    r = randint(13, 0.05)
+    await bot.say(r, "% alkota v krvi")
+
+
+bot.run(TOKEN)
